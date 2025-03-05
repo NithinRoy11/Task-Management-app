@@ -9,9 +9,7 @@ export const registerUser = async (name, email, password) => {
 };
 
 export const loginUser = async (email, password) => {
-    const response = await axios.post(`${API_URL}/login`, { email, password });
-    console.log(response.data, "hi");
-    
+    const response = await axios.post(`${API_URL}/login`, { email, password });    
     return response.data;
   };
 
@@ -27,9 +25,7 @@ export const getAuthToken = () => {
 
 
 export const logout = () => {
-    localStorage.removeItem("token"); 
     localStorage.clear(); 
     sessionStorage.clear(); 
-    window.location.reload(); 
   };
 

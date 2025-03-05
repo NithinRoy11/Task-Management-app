@@ -12,7 +12,7 @@ CREATE TABLE tasks (
     title VARCHAR(255) NOT NULL,
     description TEXT,
     category VARCHAR(100),
-    status ENUM('pending', 'completed') DEFAULT 'pending',
+    status ENUM('To Do', 'In Progress', 'Pending', 'Completed') DEFAULT 'pending',
     priority ENUM('High', 'Medium', 'Low') DEFAULT 'Medium',
     due_date DATETIME,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,

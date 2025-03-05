@@ -29,6 +29,7 @@ exports.updateTask = async ( taskId, updates) => {
   );
 };
 
+
 exports.deleteTask = async ( taskId) => {
   await db.query("DELETE FROM tasks WHERE id = ? ", [taskId]);
 };

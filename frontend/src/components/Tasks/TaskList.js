@@ -12,10 +12,9 @@ const TaskList = ({ tasks, onEdit, onDelete }) => {
           {tasks.map((task) => (
             <li
               key={task.id}
-              className="list-group-item d-flex justify-content-between align-items-center"
+              className="list-group-item d-flex flex-column flex-md-row justify-content-between align-items-start mb-3 position-relative"
             >
-              
-              <div>
+              <div className="mb-3 mb-md-0">
                 <h5 className="mb-1">{task.title}</h5>
                 <p className="mb-1 text-muted">{task.description}</p>
                 <span className="badge bg-primary me-2">{task.category}</span>
@@ -30,12 +29,25 @@ const TaskList = ({ tasks, onEdit, onDelete }) => {
                 <p className="text-muted mt-1">Due Date: {task.due_date}</p>
               </div>
 
-              
+              {/* Dropdown button positioned at the right for mobile */}
               <DropdownButton
                 id="dropdown-basic-button"
                 variant="light"
                 align="end"
                 title="⋮"
+                className="ms-md-3 position-absolute top-0 end-0 mt-3 me-3 d-md-none"
+              >
+                <Dropdown.Item onClick={() => onEdit(task.id)}>✏ Edit</Dropdown.Item>
+                <Dropdown.Item onClick={() => onDelete(task.id)}>🗑 Delete</Dropdown.Item>
+              </DropdownButton>
+
+              {/* Dropdown button for medium and larger screens */}
+              <DropdownButton
+                id="dropdown-basic-button"
+                variant="light"
+                align="end"
+                title="⋮"
+                className="ms-md-3 d-none d-md-inline-block"
               >
                 <Dropdown.Item onClick={() => onEdit(task.id)}>✏ Edit</Dropdown.Item>
                 <Dropdown.Item onClick={() => onDelete(task.id)}>🗑 Delete</Dropdown.Item>

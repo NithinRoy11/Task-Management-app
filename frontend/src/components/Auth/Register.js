@@ -32,7 +32,7 @@ const Register = () => {
           <button type="submit" className="btn btn-primary w-100">Register</button>
         </form>
         <p className="text-center mt-2">
-          Already have an account? <button className="btn btn-link p-0" onClick={() => navigate("/login")}>Login</button>
+          Already have an account? <button className="btn btn-link p-0" onClick={() => navigate("/")}>Login</button>
         </p>
       </div>
     </div>

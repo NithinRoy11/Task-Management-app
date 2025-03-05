@@ -46,6 +46,9 @@ const EditTask = () => {
 
   return (
     <div className="container mt-5">
+       <button className="btn btn-light shadow-sm px-4 py-2 rounded-pill fw-bold mb-3" onClick={() => navigate("/home")}>
+      ← Back
+      </button>
       <h2>Edit Task</h2>
       <form onSubmit={handleUpdate}>
         <input type="text" name="title" value={taskData.title} onChange={handleChange} className="form-control my-2" placeholder="Task Title" required />
@@ -76,7 +79,7 @@ const EditTask = () => {
 
         <input type="date" name="due_date" value={taskData.due_date.split("T")[0]} onChange={handleChange} className="form-control my-2" required />
 
-        <button type="submit" className="btn btn-primary w-100">Update Task</button>
+        <button type="submit" onSubmit={handleUpdate} className="btn btn-primary w-100">Update Task</button>
       </form>
     </div>
   );
